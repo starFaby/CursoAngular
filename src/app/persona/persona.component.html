@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                        <th>Profecion</th>
+                        <th>.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of personas">
+                    <td>{{item._id}}</td>
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.apellido}}</td>
+                    <td>{{item.edad}}</td>
+                    <td>{{item.profecion}}</td>
+                        
+                        <td>
+                            <button (click)="deletePersona(item._id)" class="btn-btn-primary">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <h1>FORMULARIO</h1>
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" [(ngModel)]="personas.nombre" name="nombre" id="nombre">
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" [(ngModel)]="personas.apellido" name="apellido" id="apellido">
+            </div>
+            <div class="form-group">
+                <label for="edad">Edad</label>
+                <input type="text" class="form-control" [(ngModel)]="personas.edad" name="edad" id="edad">
+            </div>
+            <div class="form-group">
+                <button (click)="savePersona()" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
